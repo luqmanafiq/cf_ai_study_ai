@@ -2,7 +2,7 @@ import { routeAgentRequest, type Schedule } from "agents";
 
 import { getSchedulePrompt } from "agents/schedule";
 
-import { AIChatAgent } from "agents/ai-chat-agent";
+import { AIChatAgent, } from "agents/ai-chat-agent";
 import {
   generateId,
   streamText,
@@ -13,13 +13,13 @@ import {
   createUIMessageStreamResponse,
   type ToolSet
 } from "ai";
-import { openai } from "@ai-sdk/openai";
+import { createWorkersAI } from 'workers-ai-provider';
 import { processToolCalls, cleanupMessages } from "./utils";
 import { tools, executions } from "./tools";
-// import { env } from "cloudflare:workers";
+import { env } from "cloudflare:workers";
 
-const model = openai("gpt-4o-2024-11-20");
-// Cloudflare AI Gateway
+const workersai = createWorkersAI({ binding: env.AI });
+const model = workersai("@cf/meta/llama-2-7b-chat-fp16");// Cloudflare AI Gateway
 // const openai = createOpenAI({
 //   apiKey: env.OPENAI_API_KEY,
 //   baseURL: env.GATEWAY_BASE_URL,
