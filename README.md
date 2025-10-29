@@ -1,4 +1,4 @@
-# CF AI Study Assistant 🎓
+# CF AI Study AI 🎓
 
 An intelligent AI-powered study assistant built with **Cloudflare Agents SDK**, Workers AI (Llama 3.3), and real-time chat capabilities.
 
@@ -44,7 +44,7 @@ Workers AI (Llama 3.3)
 
 ## 📁 Project Structure
 ```
-cf-ai-study-assistant/
+cf-ai-study-ai/
 ├── src/
 │   ├── server.ts       # StudyAgent implementation (extends AIChatAgent)
 │   ├── tools.ts        # AI tools (calculator, search, explainer)
@@ -68,7 +68,7 @@ cf-ai-study-assistant/
 ```bash
 # Clone the repository
 git clone <your-repo-url>
-cd cf-ai-study-assistant
+cd cf-ai-study-ai
 
 # Install dependencies
 npm install
@@ -88,7 +88,7 @@ Open `http://localhost:5173` in your browser!
 npm run deploy
 ```
 
-You'll get a URL like: `https://cf-ai-study-assistant.YOUR-SUBDOMAIN.workers.dev`
+You'll get a URL like: `https://cf-ai-study-ai.YOUR-SUBDOMAIN.workers.dev`
 
 ## 💡 Usage Examples
 
